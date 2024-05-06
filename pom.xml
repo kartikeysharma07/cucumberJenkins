@@ -52,10 +52,5 @@
             <artifactId>json</artifactId>
             <version>20210307</version> <!-- Or the latest version -->
         </dependency>
-        <dependency>
-        	<groupId>org.example</groupId>
-        	<artifactId>NedBankTest</artifactId>
-        	<version>1.0-SNAPSHOT</version>
-        </dependency>
   </dependencies>
 </project>
