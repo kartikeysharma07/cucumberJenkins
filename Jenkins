@@ -23,7 +23,9 @@ pipeline {
         }
 
         stage('Cleanup'){
-            bat 'echo "" > Readme'
+            steps{
+                bat 'echo "" > Readme'
+            }
         }
     }
 }
