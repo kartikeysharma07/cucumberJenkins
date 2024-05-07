@@ -25,7 +25,7 @@ pipeline {
         stage('Cleanup'){
             steps{
                 bat 'echo "" > Readme'
-                bat 'del results.html'
+                bat 'del target\\results.html'
             }
         }
     }
