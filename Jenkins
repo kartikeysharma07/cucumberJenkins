@@ -27,10 +27,4 @@ pipeline {
             }
         }
     }
-    post {
-        failure {
-            echo 'One or more tests failed. Failing the pipeline.'
-            currentBuild.result = 'FAILED'
-        }
-    }
 }
