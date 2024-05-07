@@ -10,12 +10,14 @@ pipeline {
 
         stage('Build') {
             steps {
+                echo 'Running Build'
                 bat 'mvn clean'
             }
         }
 
         stage('Test') {
             steps {
+                echo 'Running test cases'
                 bat 'mvn test'
             }
         }
