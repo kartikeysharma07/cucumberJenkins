@@ -24,18 +24,7 @@ pipeline {
 
         stage('Cleanup'){
             steps{
-                bat 'echo "" > Readme'
-                script {
-                    def maxAgeMillis = 12 * 60 * 60 * 1000
-                    def currentTimeMillis = System.currentTimeMillis()
-                    currentBuild.rawBuild.project.getItems().each { job ->
-                        job.builds.findAll { build ->
-                            build.getTimeInMillis() < currentTimeMillis - maxAgeMillis
-                        }.each { build ->
-                            build.delete()
-                        }
-                    }
-                }
+                bat 'rm Readme'
             }
         }
     }
