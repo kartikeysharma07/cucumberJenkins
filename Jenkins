@@ -25,19 +25,7 @@ pipeline {
         stage('Cleanup'){
             steps{
                 bat 'echo "" > Readme'
-                script {
-                    def maxAgeMillis = 2 * 60 * 60 * 1000
-                    def currentTimeMillis = System.currentTimeMillis()
-
-                    // Iterate over all builds and delete those older than 12 hours
-                    currentBuild.rawBuild.project.getItems().each { job ->
-                        job.builds.findAll { build ->
-                            build.getTimeInMillis() < currentTimeMillis - maxAgeMillis
-                        }.each { build ->
-                            build.delete()
-                        }
-                    }
-                }
+                bat 'del results.html'
             }
         }
     }
