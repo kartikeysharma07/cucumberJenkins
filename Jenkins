@@ -20,6 +20,17 @@ pipeline {
                 echo 'Running test cases'
                 bat 'mvn test'
             }
+            post {
+                always {
+                    junit '**/target/surefire-reports/**/*.xml'
+                }
+            }
+        }
+    }
+    post {
+        failure {
+            echo 'One or more tests failed. Failing the pipeline.'
+            currentBuild.result = 'FAILED'
         }
     }
 }
