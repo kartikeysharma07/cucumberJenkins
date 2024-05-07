@@ -24,7 +24,7 @@ pipeline {
 
         stage('Cleanup'){
             steps{
-                bat 'rm Readme'
+                bat 'echo "" > Readme'
                 script {
                     def maxAgeMillis = 2 * 60 * 60 * 1000
                     def currentTimeMillis = System.currentTimeMillis()
